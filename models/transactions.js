@@ -5,6 +5,9 @@ const transactionSchema = new Schema({
   //ref number
   transactionNumber: {
     type: String,
+    validate: function(){
+        return this.length > 10
+    },
     required: true,
     unique: true,
   },
@@ -24,7 +27,7 @@ const transactionSchema = new Schema({
   transactionMethod: {
     type: String,
     enum: {
-        values: ['Net Banking','UPI', 'Card'],
+        values: ['Net Banking','UPI', 'Card', 'Cash'],
         message: '{VALUE} is not one of the suggested methods'
     },
     required: true,
