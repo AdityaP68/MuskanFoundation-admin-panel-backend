@@ -1,5 +1,6 @@
 module.exports = {
     getAllTransactions(req,res,next){
+        console.log(req.query.label)
         res.send('Its Working')
     },
     getMonthlyTransactions(req,res,next){
@@ -9,6 +10,7 @@ module.exports = {
         res.send('Its working 3')
     },
     getTransactionsByCampaignId(req,res,next){
+        console.log(req.params)
         res.send('Its working 4')
     }
 
